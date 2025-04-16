@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "peatio/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "peatio"
+  spec.name = "peatio-dao"
   spec.version = Peatio::VERSION
   spec.authors = ["Louis B.", "Camille M."]
   spec.email = ["lbellet@heliostech.fr"]
@@ -30,8 +30,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency "em-synchrony", "~> 1.0"
   spec.add_dependency "em-websocket"
   spec.add_dependency "eventmachine"
-  spec.add_dependency "faraday", '~> 1.10'
-  spec.add_dependency "faye", "~> 1.2"
+  spec.add_dependency "faraday", '>= 1.10'
+  spec.add_dependency "websocket-client-simple", "~> 0.9.0"
   spec.add_dependency "jwt"
   spec.add_dependency "mysql2"
   spec.add_dependency "prometheus-client"

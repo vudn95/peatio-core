@@ -13,7 +13,7 @@ module Peatio::Security
     end
 
     def save(folder)
-      FileUtils.mkdir_p(folder) unless File.exists?(folder)
+      FileUtils.mkdir_p(folder) unless File.exist?(folder)
 
       write(File.join(folder, 'rsa-key'), @private)
       write(File.join(folder, 'rsa-key.pub'), @public)

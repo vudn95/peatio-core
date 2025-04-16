@@ -29,7 +29,7 @@ module Peatio
         logger.info { "Websocket connecting to #{@ws_url}" }
         raise "websocket url missing for account #{id}" unless @ws_url
 
-        @ws = Faye::WebSocket::Client.new(@ws_url)
+        @ws = WebSocket::Client::Simple.connect @ws_url
 
         @ws.on(:open) do |_e|
           subscribe_trades(@target, @ws)
